@@ -13,9 +13,9 @@ If your are having trouble installing Anaconda, read the docs ! https://docs.ana
 Jupyter Notebook is the interface we will use for data analysis. Often referred to as a notebook, it is very easy to use and great to learn python or explore messy data. The best practice for a notebook is trial and error, break and repair. A messy but intuetive way to learn. Just remember to cleen it up before you close it down, lest you will hate your past self!
 
 ## Create a folder
-Create work folder where you want to store your data and jupyter notebook. A best practice is to avoid spaces (use underscore _ ) and spectial characters like -, . or é in the folder and file names in general. To get started, we can download some sample data in the .csv format form https://www.gapminder.org/data/. I will use the average number of [babies per woman](https://www.gapminder.org/data/documentation/gd008/).
+Create work folder where you want to store your data and jupyter notebook. A best practice is to avoid spaces (use underscore _ ) and spectial characters like -, . or é in the folder and file names in general. To get started, we can download some sample data in the .csv format form https://www.gapminder.org/data/. I will use the average number of babies per woman in the CSV format.
 
-In your work folder, creat a folder named "data" and add the dara file from gapminder into it.
+In your work folder, creat a folder named "data" and add the dara file from gapminder into it. Rename the file "gapminder babies per woman.csv".
 
 ## 3, 2, 1... Launch
 Launching jupyter is incredibly easy, follow these few steps:
@@ -37,7 +37,38 @@ All the questions on how to do anything with pandas is here https://pandas.pydat
 Pandas is a open source module that is not part of python. Fortunately you have already downloaded and install pandas by installin Anaconda. To start using all the pandas functionallities type:
 
 ```python
+# import the pandas module and abreviate the module as "pd"
 import pandas as pd
 ```
 
-This will imp
+To execute this command line, hit `shift + enter`. This executes the code block and creates a new code block, or moves to the next one.
+
+A bit more info on what is going on:
+* To the left of the command block you see [\*] indicating the code is running. Then [1] indicating the code has executed properly.
+* The sentence above the comand line starting with # is a comment explaining in plain english what the code below does. It is super usefuel to type out in plain english, using #, what your code does, or you will hate your lasy past self for not doing it.
+* Don't worry if the colours in the text abore is not the same, every editor uses different colour pattens to highlight what is what.
+
+## Opening a data file
+Pandas is meant for reading, exploring, transforming and then saving data. Usually in the form of 2D tables. To open a file type:
+
+```python
+# define the file_name variable
+file_name = "gapminder babies per woman.csv"
+
+# create a path to the data file inside the data folder
+import os
+file_path = os.path.join("data", file_name)
+```
+
+Hit `shift + enter` and type `file_path` in the ew cell, and execute that cell. The output should be the full path, with a \\ separator between the folder and file name as is the case on windows.
+
+```python
+# 
+import pandas as pd
+```
+
+# Going further
+An excellent video series on pandas (and many other topics) https://www.youtube.com/watch?v=ZyhVh-qRZPA&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS
+
+Android application sololearn offers a free hands on intorduction to phython which helped me alot https://www.sololearn.com/home 
+
