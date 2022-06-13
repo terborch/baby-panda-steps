@@ -60,15 +60,65 @@ import os
 file_path = os.path.join("data", file_name)
 ```
 
-Hit `shift + enter` and type `file_path` in the ew cell, and execute that cell. The output should be the full path, with a \\ separator between the folder and file name as is the case on windows.
+Hit `shift + enter` and type `file_path` in the new cell, and execute that cell. The output should be the full path, with a \\ separator between the folder and file name as is the case on windows.
+
+In a new code block, type the following. Your data is now loaded !
 
 ```python
-# 
-import pandas as pd
+# read the data file into a pandas dataframe nicknamed df and then display its content
+df = pd.read_csv(file_path)
+df
 ```
+
+## Selecting a column
+
+```python
+# selecting the column titled 2017
+df["2017"]
+```
+
+## Applying filters
+With pandas we can easily filter using conditions on specific columns. For example:
+
+```python
+# only keep the rows, where, in the year 2017, the birthrate was higher than or equal to 3
+df[df[2017] >= 3.0]
+```
+
+The logical operators for python and many languages are:
+* `==` exactly equal to
+* `!=` not equal to
+* `>` greater than
+* `<=` smaller or equal to
+* etc...
+
+You can even combine multiple filters using `and` or `or`
+
+```python
+# only keep the rows, where, in the year 2017, the birthrate was lower than 2 and in the year 1920, the birthrate was higher than 4
+df[(df[2017] < 2.0) and (df[1920] > 4.0 )]
+```
+
+Note that this only displays the filtered data, but the df dataframe is unchanged. To save changes we would need to write:
+
+```python
+df = df[(df[2017] < 2.0) and (df[1920] > 4.0 )]
+```
+
+## Saving data in an Excel file
+```python
+# save the filtered dataframe as an excel file named "filtered data"
+df.to_excel("filtered data.xlsx")
+```
+
+# Some tips for jupyter notebook
+* Erase a code block: select the block by clicking to the right of it, in the empty space and press the "x" key
+* Restart the otebook: klick "kernel" and select "restart and run all". This should be done regulaly. It should be the first thing to do whenever an error appears to make sure that the error is not caused by simply not executing each code block in the right order.
 
 # Going further
 An excellent video series on pandas (and many other topics) https://www.youtube.com/watch?v=ZyhVh-qRZPA&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS
 
 Android application sololearn offers a free hands on intorduction to phython which helped me alot https://www.sololearn.com/home 
 
+# Disclaimer
+This example code has not been tested and this text has not been proof read, typos may cause errors !
