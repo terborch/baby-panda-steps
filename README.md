@@ -27,13 +27,17 @@ Launching jupyter is incredibly easy, follow these few steps:
 
 A browser window opens, don't panic, it's the jupyter notebook interface. It is not online, but it runs in your browser. You should see the contents of your folder.
 
-To create a new jupyter notebook click `new` and `Python 3`
-
-up right rename......................
+To create a new jupyter notebook click `new` and `Python 3`. Your can rename your notebook by clicking "Untitled" in the upper left corner.
 
 # Basic coding with pandas
 
 All the questions on how to do anything with pandas is here https://pandas.pydata.org/docs/user_guide/index.html, or a short google search "open excel file pandas" away... It's one of the most used libraries so go ahead and search away, you will never be the first to ask.
 
-## 
+## Importing pandas
+Pandas is a open source module that is not part of python. Fortunately you have already downloaded and install pandas by installin Anaconda. To start using all the pandas functionallities type:
 
+```python
+import pandas as pd
+```
+
+This will imp
